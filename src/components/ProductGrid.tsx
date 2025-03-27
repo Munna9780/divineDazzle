@@ -50,7 +50,7 @@ export default function ProductGrid() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product) => (
           <div key={product.id} className="product-card">
-            <div className="aspect-[3/4] relative overflow-hidden">
+            <div className="aspect-square relative overflow-hidden">
               <img
                 src={product.image_url}
                 alt={product.title}
