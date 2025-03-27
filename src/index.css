@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-800 bg-gradient-to-b from-gray-50 to-white;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-gray-700 hover:text-[#3498DB] transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-[#3498DB] transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .product-card {
+    @apply relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl;
+  }
+
+  .product-card img {
+    @apply transition-transform duration-500;
+  }
+
+  .product-card:hover img {
+    @apply scale-105;
+  }
+
+  .product-info {
+    @apply absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-6 transform translate-y-full transition-transform duration-300;
+  }
+
+  .product-card:hover .product-info {
+    @apply translate-y-0;
+  }
+}
